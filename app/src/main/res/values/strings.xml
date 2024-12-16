@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">diaryApp</string>
     <string name="title_task">Title</string>
-    <string name="description_task">description</string>
+    <string name="description_task">Description</string>
 </resources>

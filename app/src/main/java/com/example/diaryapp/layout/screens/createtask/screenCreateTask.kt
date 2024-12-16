@@ -27,6 +27,9 @@ fun ScreenCreateTask() {
     val selectedTime = remember { mutableStateOf("") }
     val selectedDate = remember { mutableStateOf("") }
 
+    val titleTask = remember { mutableStateOf("") }
+    val descriptionTask = remember { mutableStateOf("") }
+
     val messageTitleTask = context.getString(R.string.title_task)
     val messageDescriptionTask = context.getString(R.string.description_task)
 
@@ -54,8 +57,8 @@ fun ScreenCreateTask() {
             if (isDatePickerOpen.value) {
                 DatePickerDialogExample(context, isDatePickerOpen, selectedDate)
             }
-            TextFiledWithTitle(messageTitleTask)
-            TextFiledWithTitle(messageDescriptionTask)
+            TextFiledWithTitle(messageTitleTask, titleTask)
+            TextFiledWithTitle(messageDescriptionTask, descriptionTask)
         }
     }
 }
