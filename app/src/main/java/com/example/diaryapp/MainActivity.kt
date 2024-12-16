@@ -7,7 +7,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.diaryapp.layout.navigation.Routes
+import com.example.diaryapp.layout.screens.createtask.ScreenCreateTask
+import com.example.diaryapp.navigation.Routes
 import com.example.diaryapp.layout.screens.tasklist.ScreenTaskList
 
 class MainActivity : ComponentActivity() {
@@ -21,7 +22,10 @@ class MainActivity : ComponentActivity() {
                 startDestination = Routes.TASK_LIST,
             ) {
                 composable(Routes.TASK_LIST) {
-                    ScreenTaskList()
+                    ScreenTaskList(navController)
+                }
+                composable(Routes.CREATE_TASK) {
+                    ScreenCreateTask()
                 }
             }
         }

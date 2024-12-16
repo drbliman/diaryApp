@@ -1,4 +1,4 @@
-package com.example.diaryapp.layout.components
+package com.example.diaryapp.layout.screens.tasklist.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.PaddingValues
@@ -23,7 +23,7 @@ fun TaskList(paddingValues : PaddingValues, modifier: Modifier = Modifier) {
 
     val formatter = DateTimeFormatter.ofPattern("HH:mm", Locale.getDefault())
 
-    val timeIntervals = List(36) { index -> startTime.plusMinutes(30L * index) }
+    val timeIntervals = List(18) { index -> startTime.plusMinutes(60L * index) }
 
     val myColor = Color(red = 0xF1, green = 0xAA, blue = 0x55, alpha = 0xFF)
 

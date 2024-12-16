@@ -8,13 +8,15 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.diaryapp.layout.calendar.Calendar
-import com.example.diaryapp.layout.components.TaskList
+import com.example.diaryapp.layout.screens.tasklist.components.TaskList
+import com.example.diaryapp.layout.components.FloatingButtonExample
+import androidx.navigation.NavController
+import com.example.diaryapp.navigation.Routes
 
 @Composable
-fun ScreenTaskList() {
+fun ScreenTaskList(navController: NavController) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
     ) { paddingValues ->
@@ -31,11 +33,10 @@ fun ScreenTaskList() {
                     .fillMaxWidth()
             )
         }
+        FloatingButtonExample(
+            onClick = {
+                navController.navigate(Routes.CREATE_TASK)
+            }
+        )
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ScreenTaskList()
 }

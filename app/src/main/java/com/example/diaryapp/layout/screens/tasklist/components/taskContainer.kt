@@ -1,4 +1,4 @@
-package com.example.diaryapp.layout.components
+package com.example.diaryapp.layout.screens.tasklist.components
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
