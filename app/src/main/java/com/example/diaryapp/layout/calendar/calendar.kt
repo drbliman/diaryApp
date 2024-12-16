@@ -2,7 +2,6 @@ package com.example.diaryapp.layout.calendar
 
 import android.widget.CalendarView
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
