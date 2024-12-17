@@ -9,7 +9,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.diaryapp.layout.calendar.Calendar
+import com.example.diaryapp.layout.components.Calendar
 import com.example.diaryapp.layout.screens.tasklist.components.TaskList
 import com.example.diaryapp.layout.components.FloatingButtonExample
 import androidx.navigation.NavController

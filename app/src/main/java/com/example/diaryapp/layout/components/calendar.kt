@@ -1,4 +1,4 @@
-package com.example.diaryapp.layout.calendar
+package com.example.diaryapp.layout.components
 
 import android.widget.CalendarView
 import androidx.compose.foundation.layout.PaddingValues
