@@ -2,4 +2,6 @@
     <string name="app_name">diaryApp</string>
     <string name="title_task">Title</string>
     <string name="description_task">Description</string>
+    <string name="validation_end_more_than_start">Oops! Looks like you\'ve time-traveled! The end can\'t come before the beginning. Please try again!</string>
+    <string name="validation_end_equals_start">Time\'s stuck in a loop! The start and end times can\'t be twins. Please pick different times!</string>
 </resources>

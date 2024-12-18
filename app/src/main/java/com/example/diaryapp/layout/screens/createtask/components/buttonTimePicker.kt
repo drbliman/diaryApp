@@ -14,8 +14,6 @@ fun ButtonTimePicker(taskState: TaskState, dataTimeType: PickerType) {
                     taskState.isDatePickerStartOpen.value = !taskState.isDatePickerStartOpen.value
                 PickerType.TIME_START ->
                     taskState.isTimePickerStartOpen.value = !taskState.isTimePickerStartOpen.value
-                PickerType.DATE_END ->
-                    taskState.isDatePickerEndOpen.value = !taskState.isDatePickerEndOpen.value
                 PickerType.TIME_END ->
                     taskState.isTimePickerEndOpen.value = !taskState.isTimePickerEndOpen.value
             }
@@ -27,8 +25,6 @@ fun ButtonTimePicker(taskState: TaskState, dataTimeType: PickerType) {
                     taskState.selectedDateStartString.value.ifEmpty { "Pick Date" }
                 PickerType.TIME_START ->
                     taskState.selectedTimeStartString.value.ifEmpty { "Pick Time" }
-                PickerType.DATE_END ->
-                    taskState.selectedDateEndString.value.ifEmpty { "Pick Date" }
                 PickerType.TIME_END ->
                     taskState.selectedTimeEndString.value.ifEmpty { "Pick Time" }
             }
@@ -37,5 +33,5 @@ fun ButtonTimePicker(taskState: TaskState, dataTimeType: PickerType) {
 }
 
 enum class PickerType {
-    DATE_START, TIME_START, DATE_END, TIME_END
+    DATE_START, TIME_START, TIME_END
 }
