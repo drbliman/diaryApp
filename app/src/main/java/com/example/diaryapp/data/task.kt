@@ -9,6 +9,6 @@ class Task(
     val task: String?,
 ) {
     override fun toString(): String {
-        return "Task(id=$id, task=$task)"
+        return "$task"
     }
 }

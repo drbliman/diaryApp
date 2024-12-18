@@ -18,6 +18,7 @@ fun validationEndMoreThanStart(taskState: TaskState, context: Context) {
         taskState.selectedDateStartString.value,
         taskState.selectedTimeEndString.value
     )
+
     taskState.validEndMoreThanStart.value =
         taskState.selectedDateEndTimestamp.value.time > taskState.selectedDateStartTimestamp.value.time
 
@@ -26,6 +27,7 @@ fun validationEndMoreThanStart(taskState: TaskState, context: Context) {
     ) {
         Toast.makeText(context, messageValidationMore, Toast.LENGTH_LONG).show()
     }
+
     if(
         taskState.selectedDateEndTimestamp.value.time == taskState.selectedDateStartTimestamp.value.time
     ) {

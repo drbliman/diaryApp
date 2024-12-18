@@ -19,7 +19,7 @@ import com.example.diaryapp.R
 import com.example.diaryapp.data.AppDatabase
 import com.example.diaryapp.data.Task
 import com.example.diaryapp.data.utils.launchInsertTask
-import com.example.diaryapp.data.utils.launchPrintTasks
+import com.example.diaryapp.data.utils.launchGetTasks
 import com.example.diaryapp.layout.components.TextFiledWithTitle
 import com.example.diaryapp.layout.screens.createtask.components.ButtonTimePicker
 import com.example.diaryapp.layout.screens.createtask.components.DatePickerDialogExample
@@ -102,13 +102,13 @@ fun ScreenCreateTask(dataBase: AppDatabase) {
             ) {
                 Text("Save")
             }
-            Button(
-                onClick = {
-                    launchPrintTasks(dataBase)
-                }
-            ) {
-                Text("Get")
-            }
+//            Button(
+//                onClick = {
+//                    launchGetTasks(dataBase)
+//                }
+//            ) {
+//                Text("Get")
+//            }
         }
     }
 }
