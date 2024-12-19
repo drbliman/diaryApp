@@ -1,4 +1,4 @@
-package com.example.diaryapp.utils.validatio
+package com.example.diaryapp.utils.validation
 
 import com.example.diaryapp.utils.TaskState
 

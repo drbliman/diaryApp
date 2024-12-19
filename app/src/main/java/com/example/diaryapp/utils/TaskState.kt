@@ -8,7 +8,7 @@ class TaskState {
     val isTimePickerStartOpen: MutableState<Boolean> = mutableStateOf(false)
     val isDatePickerStartOpen: MutableState<Boolean> = mutableStateOf(false)
 
-    val validEndMoreThanStart: MutableState<Boolean> = mutableStateOf(false)
+    val validation: MutableState<Boolean> = mutableStateOf(false)
 
     val isTimePickerEndOpen: MutableState<Boolean> = mutableStateOf(false)
 

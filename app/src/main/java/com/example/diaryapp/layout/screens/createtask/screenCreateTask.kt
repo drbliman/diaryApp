@@ -19,7 +19,6 @@ import com.example.diaryapp.R
 import com.example.diaryapp.data.AppDatabase
 import com.example.diaryapp.data.Task
 import com.example.diaryapp.data.utils.launchInsertTask
-import com.example.diaryapp.data.utils.launchGetTasks
 import com.example.diaryapp.layout.components.TextFiledWithTitle
 import com.example.diaryapp.layout.screens.createtask.components.ButtonTimePicker
 import com.example.diaryapp.layout.screens.createtask.components.DatePickerDialogExample
@@ -27,8 +26,9 @@ import com.example.diaryapp.layout.screens.createtask.components.PickerType
 import com.example.diaryapp.layout.screens.createtask.components.TimePickerDialogExample
 import com.example.diaryapp.utils.TaskState
 import com.example.diaryapp.utils.toSerializableTaskState
-import com.example.diaryapp.utils.validatio.checkingValidationConditions
-import com.example.diaryapp.utils.validatio.validationEndMoreThanStart
+import com.example.diaryapp.utils.validation.checkingValidationConditions
+import com.example.diaryapp.utils.validation.createTimestamp
+import com.example.diaryapp.utils.validation.validation
 import com.google.gson.Gson
 
 @Composable
@@ -85,7 +85,8 @@ fun ScreenCreateTask(dataBase: AppDatabase) {
                 )
             }
             if(checkingValidationConditions(taskState)) {
-                validationEndMoreThanStart(taskState, context)
+                createTimestamp(taskState)
+                validation(taskState, context, dataBase)
 //                val gson = Gson()
 //                val serializableTaskState = taskState.toSerializableTaskState()
 //                println(gson.toJson(serializableTaskState))
