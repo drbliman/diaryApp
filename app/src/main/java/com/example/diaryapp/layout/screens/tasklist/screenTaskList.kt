@@ -11,6 +11,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.example.diaryapp.layout.components.Calendar
 import com.example.diaryapp.layout.screens.tasklist.components.TaskList
@@ -47,7 +48,7 @@ fun ScreenTaskList(navController: NavController, dataBase: AppDatabase) {
             TaskList(
                 paddingValues = PaddingValues(0.dp),
                 selectedDate,
-                tasks
+                tasks,
             )
         }
         FloatingButtonExample(
