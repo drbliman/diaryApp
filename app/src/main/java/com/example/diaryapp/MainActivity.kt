@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
                     ScreenTaskList(navController, dataBase)
                 }
                 composable(Routes.CREATE_TASK) {
-                    ScreenCreateTask(dataBase)
+                    ScreenCreateTask(navController, dataBase)
                 }
             }
         }

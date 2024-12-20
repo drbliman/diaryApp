@@ -3,10 +3,16 @@ package com.example.diaryapp.data.utils
 import com.example.diaryapp.data.AppDatabase
 import com.example.diaryapp.data.Task
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
-fun launchInsertTask(database: AppDatabase, task: Task) {
-    kotlinx.coroutines.GlobalScope.launch(Dispatchers.IO) {
-        database.taskDao().insertAll(task)
+suspend fun launchInsertTask(database: AppDatabase, task: Task): Boolean {
+    return try {
+        withContext(Dispatchers.IO) {
+            database.taskDao().insertAll(task)
+        }
+        true
+    } catch (e: Exception) {
+        e.printStackTrace()
+        false
     }
 }

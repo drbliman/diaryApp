@@ -3,7 +3,9 @@
     <string name="title_task">Title</string>
     <string name="description_task">Description</string>
     <string name="validation_end_more_than_start">Oops! Looks like you\'ve time-traveled! The end can\'t come before the beginning. Please try again!</string>
-    <string name="validation_end_equals_start">Time\'s stuck in a loop! The start and end times can\'t be twins. Please pick different times!</string>
-    <string name="validation_fifteen_minutes">Time flies, but not that fast! Please make sure your event lasts at least 15 minutes—coffee breaks are longer than this!</string>
-    <string name="validation_conflict_of_tasks">Oops! It looks like there\'s already something happening at this time. Time travel may be involved, but you\'ll have to pick another time!</string>
+    <string name="validation_combined">
+        Time\'s stuck in a loop! The start and end times can\'t be twins. Make sure your event lasts at least 15 minutes—coffee breaks are longer than this! And don\'t forget to check for schedule conflicts—time travel isn\'t supported yet. Please adjust your time selection!
+    </string>
+    <string name="saved_successfully">Task saved successfully</string>
+    <string name="saved_failed">Failed to save task</string>
 </resources>

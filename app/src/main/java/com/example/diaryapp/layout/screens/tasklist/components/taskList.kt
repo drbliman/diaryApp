@@ -1,31 +1,34 @@
 package com.example.diaryapp.layout.screens.tasklist.components
 
+import android.R.attr.maxLines
 import android.annotation.SuppressLint
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
-import java.time.LocalTime
-import java.time.format.DateTimeFormatter
-import java.util.Locale
-import androidx.compose.runtime.MutableState
-import com.example.diaryapp.utils.SerializableTaskState
-import com.example.diaryapp.utils.filterTasksByDate
-import com.example.diaryapp.ui.theme.customTextStyleTimeList
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.example.diaryapp.ui.theme.customTextElementStyle
 import com.example.diaryapp.ui.theme.customTextStyle
+import com.example.diaryapp.ui.theme.customTextStyleTimeList
+import com.example.diaryapp.utils.SerializableTaskState
 import com.example.diaryapp.utils.calculateWidth
+import com.example.diaryapp.utils.filterTasksByDate
 import com.example.diaryapp.utils.heightCalculationByTime
 import com.example.diaryapp.utils.startCalculationByTime
+import java.time.LocalTime
+import java.time.format.DateTimeFormatter
+import java.util.Locale
+
 
 @SuppressLint("ResourceAsColor")
 @Composable
@@ -85,11 +88,13 @@ fun TaskList(
                     .customTextElementStyle(),
             ) {
                 Text(
-                        text = "Task: ${item.titleTask}",
+                        text = "${item.selectedTimeStartString} - ${item.selectedTimeEndString} ${item.titleTask}",
                         modifier = Modifier
                             .customTextElementStyle()
                             .height(heightCalculationByTime(item)),
                         style = customTextStyle,
+                        maxLines = (heightCalculationByTime(item).value / customTextStyle.fontSize.value).toInt(),
+                        overflow = TextOverflow.Ellipsis,
                     )
             }
         }
