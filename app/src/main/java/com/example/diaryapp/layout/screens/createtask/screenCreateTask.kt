@@ -125,7 +125,7 @@ fun ScreenCreateTask(navController: NavController, dataBase: AppDatabase) {
                     taskState.isTimePickerEndOpen.value,
                     taskState.isTimePickerStartOpen.value,
                     taskState.isDatePickerStartOpen.value) {
-                    if(checkingValidationConditions(taskState)) {
+                    if (checkingValidationConditions(taskState)) {
                         createTimestamp(taskState)
                         CoroutineScope(Dispatchers.Main).launch {
                             validation(taskState, dataBase)
@@ -159,6 +159,28 @@ fun ScreenCreateTask(navController: NavController, dataBase: AppDatabase) {
                 ) {
                     Text("Save")
                 }
+                // TODO: refactor ---
+                if (
+                    !taskState.validation.value &&
+                    taskState.selectedTimeStartString.value.trim().isNotEmpty() &&
+                    taskState.selectedDateStartString.value.trim().isNotEmpty() &&
+                    taskState.selectedTimeEndString.value.trim().isNotEmpty()
+                    ) {
+                    var text = ""
+                    if (!taskState.validationConflictOfTasks.value) {
+                        text = context.getString(R.string.validation_conflict_of_tasks)
+                    } else if (!taskState.validationEndMoreThanStart.value) {
+                        text = context.getString(R.string.validation_end_equals_start)
+                    } else if (!taskState.validationFifteenMinutes.value) {
+                        text = context.getString(R.string.validation_fifteen_minutes)
+                    }
+                    Text(
+                        text = text,
+                        style = baseTextStyle,
+                        color = Color.Red
+                    )
+                }
+                // TODO: ---
             }
         }
     }

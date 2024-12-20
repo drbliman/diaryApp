@@ -8,6 +8,7 @@ fun validationFifteenMinutes(taskState: TaskState): Boolean {
     val endTime = taskState.selectedDateEndTimestamp.value.time
 
     val difference = (endTime - startTime) >= 15 * 60 * 1000
+    taskState.validationFifteenMinutes.value = difference
 
     return difference
 }

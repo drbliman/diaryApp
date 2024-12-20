@@ -20,9 +20,12 @@ suspend fun validationConflictOfTasks(
         val taskTimeEnd = task.selectedDateEndTimestamp
 
         if (selectedTimeStart in taskTimeStart until taskTimeEnd) {
+            taskState.validationConflictOfTasks.value = false
             return false
         }
     }
+
+    taskState.validationConflictOfTasks.value = true
 
     return true
 }
