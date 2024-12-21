@@ -7,7 +7,7 @@ data class SerializableTaskState(
     val selectedDateStartTimestamp: Long,
     val selectedDateEndTimestamp: Long,
     val titleTask: String,
-    val descriptionTask: String
+    val descriptionTask: String,
 )
 
 fun TaskState.toSerializableTaskState(): SerializableTaskState {
@@ -18,6 +18,6 @@ fun TaskState.toSerializableTaskState(): SerializableTaskState {
         selectedDateStartTimestamp = selectedDateStartTimestamp.value.time,
         selectedDateEndTimestamp = selectedDateEndTimestamp.value.time,
         titleTask = titleTask.value,
-        descriptionTask = descriptionTask.value
+        descriptionTask = descriptionTask.value,
     )
 }

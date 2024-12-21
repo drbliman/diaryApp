@@ -7,4 +7,6 @@
     <string name="validation_conflict_of_tasks">Oops! It looks like there\'s already something happening at this time. Time travel may be involved, but you\'ll have to pick another time!</string>
     <string name="saved_successfully">Task saved successfully</string>
     <string name="saved_failed">Failed to save task</string>
+    <string name="delete_successfully">Task deleted successfully</string>
+    <string name="delete_failed">Failed to delete task</string>
 </resources>

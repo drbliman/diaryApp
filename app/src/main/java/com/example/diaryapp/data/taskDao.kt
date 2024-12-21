@@ -7,6 +7,9 @@ import androidx.room.Query
 
 @Dao
 interface TaskDao {
+    @Query("SELECT id FROM tasks WHERE task = :task LIMIT 1")
+    fun findIdByTask(task: String): Int?
+
     @Query("SELECT * FROM tasks")
     fun getAll(): List<Task>
 

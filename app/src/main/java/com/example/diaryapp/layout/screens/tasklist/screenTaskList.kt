@@ -48,6 +48,7 @@ fun ScreenTaskList(navController: NavController, dataBase: AppDatabase) {
                 paddingValues = PaddingValues(0.dp),
                 selectedDate,
                 tasks,
+                dataBase,
             )
         }
         FloatingButtonExample(
