@@ -11,7 +11,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
@@ -20,14 +19,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.example.diaryapp.R
 import com.example.diaryapp.data.AppDatabase
 import com.example.diaryapp.ui.theme.customTextElementStyle
-import com.example.diaryapp.ui.theme.customTextStyle
-import com.example.diaryapp.ui.theme.customTextStyleTimeList
 import com.example.diaryapp.utils.SerializableTaskState
 import com.example.diaryapp.utils.calculateWidth
 import com.example.diaryapp.utils.filterTasksByDate
@@ -72,12 +68,7 @@ fun TaskList(
                     }
                     .height(100.dp),
             ) {
-                Text(
-                    text = timeIntervals[index].format(formatter),
-                    modifier = Modifier
-                        .width(60.dp),
-                    style = customTextStyleTimeList,
-                )
+                TextTime(timeIntervals[index].format(formatter))
             }
         }
 
@@ -98,17 +89,7 @@ fun TaskList(
                     .customTextElementStyle()
                     .padding(end = 15.dp),
             ) {
-                Text(
-                        text =
-                        "${item.selectedTimeStartString} - ${item.selectedTimeEndString} ${item.titleTask}\n${item.descriptionTask}",
-                        modifier = Modifier
-                            .customTextElementStyle()
-                            .height(heightCalculationByTime(item))
-                            .padding(5.dp),
-                        style = customTextStyle,
-                        maxLines = (heightCalculationByTime(item).value / customTextStyle.fontSize.value).toInt(),
-                        overflow = TextOverflow.Ellipsis,
-                    )
+                TextTask(item)
                 IconButton(
                     onClick = { taskDialogState.value = true },
                     modifier = Modifier

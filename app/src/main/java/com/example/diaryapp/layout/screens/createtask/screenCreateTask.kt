@@ -149,7 +149,6 @@ fun ScreenCreateTask(navController: NavController, dataBase: AppDatabase) {
                 ) {
                     Text("Save")
                 }
-                // TODO: refactor ---
                 if (
                     !taskState.validation.value &&
                     taskState.selectedTimeStartString.value.trim().isNotEmpty() &&
@@ -170,7 +169,6 @@ fun ScreenCreateTask(navController: NavController, dataBase: AppDatabase) {
                         color = Color.Red
                     )
                 }
-                // TODO: ---
             }
         }
     }
