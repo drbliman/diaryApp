@@ -16,7 +16,7 @@ fun DatePickerDialogExample(
     selectedDate: MutableState<String>
 ) {
     val calendar = remember { Calendar.getInstance() }
-    DatePickerDialog(
+    val dialog = DatePickerDialog(
         context,
         { _, year, month, dayOfMonth ->
             calendar.set(Calendar.YEAR, year)
@@ -29,5 +29,11 @@ fun DatePickerDialogExample(
         calendar.get(Calendar.YEAR),
         calendar.get(Calendar.MONTH),
         calendar.get(Calendar.DAY_OF_MONTH)
-    ).show()
+    )
+
+    dialog.setOnCancelListener {
+        isDatePickerOpen.value = false
+    }
+
+    dialog.show()
 }

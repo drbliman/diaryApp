@@ -45,6 +45,7 @@ class StartCalculationByTimeTest {
     @Test(expected = IndexOutOfBoundsException::class)
     fun `startCalculationByTime throws exception for invalid time format`() {
         val time = "14" //
+
         startCalculationByTime(time)
     }
 

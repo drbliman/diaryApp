@@ -6,7 +6,7 @@ import org.junit.Assert.*
 import org.junit.Test
 import java.sql.Timestamp
 
-class validationEndMoreThanStartTest {
+class ValidationEndMoreThanStartTest {
     @Test
     fun `validationEndMoreThanStart returns true when end is after start`() {
         val startDate = Timestamp.valueOf("2024-12-21 10:00:00")
