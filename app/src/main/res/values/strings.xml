@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">diaryApp</string>
+    <string name="title_task">Title</string>
+    <string name="description_task">Description</string>
+    <string name="validation_end_equals_start">Time\'s playing tricks on you! Start and end times can\'t be twins, and the end time shouldn\'t try to time-travel before the start. Please pick sensible times!</string>
+    <string name="validation_fifteen_minutes">Time flies, but not that fast! Please make sure your event lasts at least 15 minutes—coffee breaks are longer than this!</string>
+    <string name="validation_conflict_of_tasks">Oops! It looks like there\'s already something happening at this time. Time travel may be involved, but you\'ll have to pick another time!</string>
+    <string name="saved_successfully">Task saved successfully</string>
+    <string name="saved_failed">Failed to save task</string>
+    <string name="delete_successfully">Task deleted successfully</string>
+    <string name="delete_failed">Failed to delete task</string>
 </resources>
