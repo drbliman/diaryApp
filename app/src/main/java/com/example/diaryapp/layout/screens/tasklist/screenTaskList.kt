@@ -31,7 +31,6 @@ fun ScreenTaskList(navController: NavController, dataBase: AppDatabase) {
     LaunchedEffect(selectedDate.value) {
         kotlinx.coroutines.GlobalScope.launch {
             tasks.value = launchGetTasks(dataBase)
-            println(tasks.value)
         }
     }
 

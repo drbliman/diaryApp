@@ -16,9 +16,6 @@ interface TaskDao {
     @Query("SELECT * FROM tasks WHERE id IN (:taskIds)")
     fun loadAllByIds(taskIds: IntArray): List<Task>
 
-//    @Query("SELECT * FROM tasks WHERE task")
-//    fun findByTask(first: String): Task
-
     @Insert
     fun insertAll(vararg tasks: Task)
 
