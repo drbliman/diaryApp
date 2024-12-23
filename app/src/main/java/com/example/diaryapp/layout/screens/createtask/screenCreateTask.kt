@@ -1,6 +1,7 @@
 package com.example.diaryapp.layout.screens.createtask
 
 import android.widget.Toast
+import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -10,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Scaffold
@@ -62,6 +64,7 @@ fun ScreenCreateTask(navController: NavController, dataBase: AppDatabase) {
     val keyboardController = LocalSoftwareKeyboardController.current
     Box(
         modifier = Modifier
+            .verticalScroll(ScrollState(0))
             .fillMaxSize()
             .pointerInput(Unit) {
                 detectTapGestures(
